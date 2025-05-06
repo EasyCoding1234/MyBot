@@ -4,8 +4,8 @@ FROM openjdk:17-jdk-slim
 # Устанавливаем рабочую директорию внутри контейнера
 WORKDIR /app
 
-# Копируем файлы в контейнер
-COPY target/my-bot.jar /app/my-bot.jar
+# Копируем собранный JAR-файл (теперь с правильным именем!)
+COPY target/telegram-bot-1.0-SNAPSHOT.jar /app/app.jar
 
 # Указываем команду для запуска
-CMD ["java", "-jar", "my-bot.jar"]
+CMD ["java", "-jar", "app.jar"]
